@@ -27,9 +27,9 @@ io.sockets.on('connection', function (socket) {
  var stream = T.stream('statuses/filter', { track: watchList })
 
   stream.on('tweet', function (tweet) {
-
-    io.sockets.emit('stream',tweet.text);
-
+    if (tweet.geo != null) {
+      io.sockets.emit('stream',tweet);
+    }
 
   });
 }); 
