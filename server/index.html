@@ -4,7 +4,7 @@
 
         var socket = io.connect('http://localhost:8080');
         socket.on('stream', function(tweet){
-        $('#tweetd').append(tweet+'<br>');
+        $('#tweetd').append(tweet.geo.coordinates+tweet.text+'<br>');
         });
   </script>
   <div id="tweetd"></div>

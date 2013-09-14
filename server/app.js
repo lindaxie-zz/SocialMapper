@@ -28,8 +28,9 @@ io.sockets.on('connection', function (socket) {
 
   stream.on('tweet', function (tweet) {
 
-    io.sockets.emit('stream',tweet);
-
+    if (tweet.geo != null) {
+      io.sockets.emit('stream',tweet);
+    }
 
   });
 }); 
