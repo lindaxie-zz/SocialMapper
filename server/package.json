@@ -1,0 +1,8 @@
+{
+	"Name": "Twitter analytics",
+	"Version": "0.0.1",
+	"Private": true,
+	"Dependencies": {
+		"twit": "1.1.8"
+	}
+}
