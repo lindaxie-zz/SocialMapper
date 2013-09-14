@@ -5,13 +5,16 @@ var express = require('express')
   ,Twit = require('twit')
   , io = require('socket.io').listen(server);
 
-server.listen(8080);
+var oneDay = 86400000;
+app.use(express.static(__dirname + '/public', { maxAge: oneDay }));
 
+server.listen(8080);
+/*
 // routing
 app.get('/', function (req, res) {
 res.sendfile(__dirname + '/index.html');
 });
-
+*/
 var watchList = ['love', 'hate'];
  var T = new Twit({
     consumer_key:         'xPfN5ib7ogAywGkJnXNpA'
