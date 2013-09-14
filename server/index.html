@@ -1,4 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE>
+<html lang="en">
   <head>
   	<!-- start of map script/links -->
 
@@ -26,80 +27,6 @@
 	});
 	</script>
 	<!-- end of map script/links -->
-<!-- 
-    	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    	<script type="text/javascript" src="https://raw.github.com/DmitryBaranovskiy/raphael/master/raphael-min.js"></script>
-    	<script type="text/javascript" src="http://kartograph.org/js/kartograph.min.js"></script>
-    	<script type='text/javascript'>
-      google.load('visualization', '1', {'packages': ['geomap']});
-      google.setOnLoadCallback(drawMap);
-      var dataTable;
-      var nodeNum = 0;
-
-      function addNode(lat, lng, val) {
-        window.dataTable.setValue(nodeNum,0,lat);
-        dataTable.setValue(nodeNum,1,lng);
-        dataTable.setValue(nodeNum,3,val);
-        nodeNum++;
-      }
-
-      function drawMap() {
-        /*
-        var data = google.visualization.arrayToDataTable([
-            ['City', 'Popularity'],
-            ['New York', 200],
-            ['Boston', 300],
-            ['Miami', 400],
-            ['Chicago', 500],
-            ['Los Angeles', 600],
-            ['Houston', 700]
-            ]);
-        */
-        dataTable = new google.visualization.DataTable();
-
-        dataTable.addRows(100);
-        dataTable.addColumn('number', 'LATITUDE', 'Latitude');
-        dataTable.addColumn('number', 'LONGITUDE', 'Longitude');
-        dataTable.addColumn('number', 'VALUE', 'Value'); // Won't use this column, but still must define it.
-        dataTable.addColumn('string', 'HOVER', 'HoverText');
-
-        addNode(47,-122,"Hello World!");
-
-        redraw();
-      };
-
-      function redraw() {
-        var options = {};
-//        options['region'] = 'US';
-        options['colors'] = [0xFF8747, 0xFFB581, 0xc06000]; //orange colors
-        options['dataMode'] = 'markers';
-
-        var container = document.getElementById('map_canvas');
-        var geomap = new google.visualization.GeoMap(container);
-        geomap.draw(dataTable, options);
-      }
-
-</script>
-
-<script src="/socket.io/socket.io.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-<script>
-  var socket = io.connect('http://localhost:8080');
-  socket.on('stream', function(tweet){
-    coord = tweet.geo.coordinates.toString().split(",");
-    reply = tweet.in_reply_to_status_id;
-    addNode(Math.round(coord[0]),Math.round(coord[1]),tweet.text);
-    redraw();
-    if (reply) {
-	//    $('#tweetd').append(tweet.geo.coordinates+tweet.text+'<br>');	
-    }
-
-  });
-</script>
-
- -->
-
 <style>
 	svg {
 		margin: auto;
@@ -111,10 +38,6 @@
 	
 	<div id="vmap" style="width: 100%; height: 100%; margin: auto; display: block; "></div>
 
-  <!-- <div id='map_canvas'></div>
-  <div id="tweetd"></div> -->
 </body>
 
 </html>
-
-</div>
